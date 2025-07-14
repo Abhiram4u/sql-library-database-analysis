@@ -1,4 +1,4 @@
-
+use library_management;
 select * from authors;
 select * from book_copies;
 select * from book_loans;
@@ -85,10 +85,24 @@ using(bookid)
 where branchname = "central" and authorname = "stephen king"
 group by title;
 
+### ACTIVE BORROWERS--
+SELECT BW.BorrowerName, COUNT(*) AS Total_Loans
+FROM Borrower BW
+JOIN Book_Loans BL ON BW.CardNo = BL.CardNo
+GROUP BY BW.BorrowerName
+ORDER BY Total_Loans DESC;
 
+### Available Copies in Each Branch
+SELECT LB.BranchName, SUM(BC.No_Of_Copies) AS Total_Copies
+FROM Library_Branch LB
+JOIN Book_Copies BC ON LB.BranchID = BC.BranchID
+GROUP BY LB.BranchName;
 
-
-
+###Books by Each Publisher---
+SELECT P.Publishername, COUNT(*) AS Books_Published
+FROM Publisher P
+JOIN Books B ON P.PublisherName = B.PublisherName
+GROUP BY P.PublisherName;
 
 
 
