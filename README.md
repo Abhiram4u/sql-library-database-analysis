@@ -83,3 +83,9 @@ GROUP BY P.Pub_Name;
 
 - Insightful patterns from library usage data
 
+
+---
+
+## 🔗 Connect with Me
+Check out more projects on my [GitHub](https://github.com/Abhiram4u) or reach out via [LinkedIn](https://www.linkedin.com/in/abhiram06o9).
+
